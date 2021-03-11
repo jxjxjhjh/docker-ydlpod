@@ -1,0 +1,9 @@
+<opml version="1.0">
+<head>
+<title>Podfeeds</title>
+</head>
+<body>
+<outline type="rss" xmlUrl="http://sss.com/xxx.xml" title="拜托了小翔哥"/>
+<outline type="rss" xmlUrl="http://sss.com/xxx.xml" title="盗月社"/>
+</body>
+</opml>
