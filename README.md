@@ -9,22 +9,17 @@ docker run -d --name ydlpod \
     --restart unless-stopped \
     jxjxjhjh/ydlpod
 ```
-3.初始化
+2.初始化
 
-在/var/www下增加config.yaml文件，然后运行
+修改config.yaml后手动运行一次
 
 docker exec -it ydlpod ydl_podcast config.yaml
 
 config.yaml 请参考 https://github.com/nbr23/ydl-podcast
 
-5.设定定时拉取视频
+PS：项目设定为23：23定时运行，可修改crontab.yaml改变配置，修改后需要docker restart ydlpod重启容器以生效。
 
-在主机使用crontab或其他方法定时运行 docker exec -it ydlpod ydl_podcast config.yaml
-
-过于频繁会被YouTube阻止，请勿设定太过于频繁的拉取频率和太多的频道。
-频道数量建议在10个以内，拉取频率建议最快每12小时/次。
-
-7.手动编写opml
+3.手动编写opml
 
 请参考本项目中的相关文件，放在 /var/www 中可直接访问
 
