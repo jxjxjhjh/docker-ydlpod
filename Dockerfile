@@ -10,4 +10,4 @@ RUN git clone https://github.com/jxjxjhjh/docker-ydlpod.git
 RUN mv docker-ydlpod/* .
 RUN rm -rf docker-ydlpod
 RUN chmod +x run.sh
-ENTRYPOINT ["run.sh"]
+CMD ["/bin/sh", "-c", "run.sh"]
