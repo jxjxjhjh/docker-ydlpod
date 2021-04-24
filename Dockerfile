@@ -1,8 +1,10 @@
-FROM python:3
+FROM python:3.9
 
+EXPOSE 8001
+USER 1000
 WORKDIR /app
+ADD https://raw.githubusercontent.com/jxjxjhjh/docker-ydlpod/main/run.sh /app
+RUN apt update && apt install ffmpeg -y && \
+    pip install git+https://github.com/nbr23/ydl-podcast.git
 
-RUN apt update && apt install ffmpeg -y
-RUN pip install git+https://github.com/nbr23/ydl-podcast.git
-
-CMD ["/bin/sh", "-c", "/app/run.sh"]
+CMD ["/bin/sh", "-c", "run.sh"]
