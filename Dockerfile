@@ -2,8 +2,8 @@ FROM python
 
 WORKDIR /app
 
-RUN pip install FFmpeg git+https://github.com/nbr23/ydl-podcast.git
+RUN pip install FFmpeg ffmpeg-python git+https://github.com/nbr23/ydl-podcast.git
 
 EXPOSE 8001
 
-CMD nohup python -m http.server 8001 > /dev/null & while true;do timeout 600 ydl_podcast config.yaml;pip install --upgrade youtube-dl;sleep 87654;done
+CMD nohup python -m http.server 8001 > /dev/null &;while true;do timeout 600 ydl_podcast config.yaml;pip install --upgrade youtube-dl;sleep 87654;done
