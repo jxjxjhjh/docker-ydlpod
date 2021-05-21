@@ -1,11 +1,10 @@
-FROM python:alpine
+FROM alpine
 
 WORKDIR /app
 
-RUN pip install git+https://github.com/nbr23/ydl-podcast.git
-
 RUN apk --no-cache add ca-certificates python3 py3-pip ffmpeg \
-&& pip3 install --disable-pip-version-check youtube-dl
+&& pip install --disable-pip-version-check youtube-dl \
+&& pip install git+https://github.com/nbr23/ydl-podcast.git
 
 EXPOSE 8001
 
