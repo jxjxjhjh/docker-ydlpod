@@ -1,9 +1,9 @@
-FROM python:3.9
+FROM python:alpine
 
 WORKDIR /app
 
-RUN pip install git+https://github.com/nbr23/ydl-podcast.git
 RUN apt update && apt install FFmpeg
+RUN pip install git+https://github.com/nbr23/ydl-podcast.git
 
 EXPOSE 8001
 
