@@ -3,9 +3,10 @@ version: '3'
 services:
   ydlpod:
     image: jxjxjhjh/ydlpod
-    container_name: pod
+    container_name: pod2
     ports:
       - "8001:8001"
-    restart: always
     volumes:
-      - /var/www:/app
+      - /var/syncthing/media/docker/ydlpod:/app/config
+      - /var/syncthing/media/docker/ydlpod:/app/data
+    restart: always
