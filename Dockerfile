@@ -2,7 +2,7 @@ FROM alpine
 
 WORKDIR /app
 
-ADD https://github.com/jxjxjhjh/docker-ydlpod/blob/main/app.sh
+ADD https://raw.githubusercontent.com/jxjxjhjh/docker-ydlpod/main/app.sh .
 
 RUN apk --no-cache add ca-certificates git python3 py3-pip ffmpeg \
 && pip install --disable-pip-version-check youtube-dl \
