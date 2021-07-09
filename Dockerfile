@@ -11,4 +11,4 @@ RUN apk --no-cache add ca-certificates git python3 py3-pip ffmpeg \
 EXPOSE 8001
 USER 1000:1000
 
-CMD nohup python3 -m http.server 8001 & while true;do timeout 1200 ydl_podcast config/config.yaml;sleep 87654;done
+CMD app.sh
