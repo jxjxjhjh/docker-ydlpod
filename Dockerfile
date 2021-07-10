@@ -4,6 +4,8 @@ WORKDIR /app
 
 ADD https://raw.githubusercontent.com/jxjxjhjh/docker-ydlpod/main/app.sh /app/config
 
+RUN chmod 755 /app/config/app.sh
+
 RUN apk --no-cache add ca-certificates git python3 py3-pip ffmpeg \
 && pip install --disable-pip-version-check youtube-dl \
 && pip install git+https://github.com/nbr23/ydl-podcast.git
